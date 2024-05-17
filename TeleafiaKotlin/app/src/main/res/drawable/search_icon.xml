@@ -1,0 +1,6 @@
+<!-- res/drawable/maroon_lock_icon.xml -->
+<bitmap xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:src="@android:drawable/ic_menu_search"
+
+    android:tint="#800000" /> <!-- Maroon color with some opacity -->

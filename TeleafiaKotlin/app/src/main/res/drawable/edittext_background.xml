@@ -1,0 +1,9 @@
+<!-- res/drawable/edittext_background.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/white" /> <!-- Maroon color with some opacity -->
+    <corners android:radius="10dp" /> <!-- Adjust radius to change the roundness -->
+    <stroke
+        android:width="2dp"
+        android:color="#4D0000" /> <!-- Border color with some opacity -->
+</shape>
