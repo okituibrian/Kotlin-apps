@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">simple layouts</string>
+    <string name="doctors_image">doctors image</string>
+    <string name="welcome">Welcome</string>
 </resources>

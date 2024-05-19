@@ -6,6 +6,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.marginTop
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,18 +16,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // Adding TextViews to the LinearLayout
-        addTextView("Hello")
-        addTextView("Mr")
-        addTextView("Okitui")
+        //addTextView("Welcome")
+
     }
 
-    private fun addTextView(label: String) {
-        // Create a new TextView
-        val view = TextView(this)
-        view.text = label
-        view.textSize = 28f
-        view.setTextColor(Color.parseColor("#ff0000"))
-        val linearLayout = findViewById<LinearLayout>(R.id.linearlayout)
-        linearLayout.addView(view)
-    }
+//    private fun addTextView(label: String) {
+//        // Create a new TextView
+//        val view = TextView(this)
+//        view.text = label
+//        view.textSize = 35f
+//        view.setTextColor(Color.parseColor("#ff0000"))
+//        val linearLayout = findViewById<LinearLayout>(R.id.linearlayout)
+//        linearLayout.addView(view)
+//    }
 }
