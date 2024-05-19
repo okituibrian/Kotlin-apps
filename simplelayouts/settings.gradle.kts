@@ -19,8 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "kotlin layouts"
-include(":app")
-include(":app")
+rootProject.name = "simple layouts"
 include(":app")
  
