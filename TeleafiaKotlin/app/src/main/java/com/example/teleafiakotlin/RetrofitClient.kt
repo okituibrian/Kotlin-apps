@@ -1,10 +1,8 @@
-package com.example.teleafiakotlin
-
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
-    private const val BASE_URL = "https://cd4e-102-210-244-74.ngrok-free.app"
+    private const val BASE_URL = "https://3eaa-102-210-244-74.ngrok-free.app/"
 
     val apiService: ApiService by lazy {
         Retrofit.Builder()
