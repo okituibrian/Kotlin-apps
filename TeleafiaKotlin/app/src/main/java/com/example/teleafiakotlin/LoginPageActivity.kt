@@ -1,5 +1,6 @@
 package com.example.teleafiakotlin
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -49,6 +50,11 @@ class LoginActivity : AppCompatActivity() {
                     if (responseBody != null) {
                         Log.d("LoginActivity", "Received token: ${responseBody.token}")
                         Log.d("LoginActivity", "User info: ${responseBody.user}")
+
+                        // Navigate to PharmacyActivity
+                        val intent = Intent(this@LoginActivity, PharmacyActivity::class.java)
+                        startActivity(intent)
+                        finish() // Optional: Call finish() if you want to close the LoginActivity
                     }
                 } else {
                     Log.d("LoginActivity", "Login failed: ${response.errorBody()?.string()}")
