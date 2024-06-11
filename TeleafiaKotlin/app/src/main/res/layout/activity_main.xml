@@ -46,15 +46,6 @@
         android:textColor="@color/maroon"
         tools:ignore="HardcodedText,SpUsage" />
 
-    <ProgressBar
-        android:id="@+id/spinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:indeterminate="true"
-        android:layout_marginBottom="50dp"
-        style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Large"
-        android:indeterminateTint="@color/maroon" />
 
 
     <Button
@@ -62,7 +53,7 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_button"
-        android:text="Geting Started"
+        android:text="Getting Started"
         android:textColor="@color/white"
         android:gravity="center"
         android:layout_gravity="center"

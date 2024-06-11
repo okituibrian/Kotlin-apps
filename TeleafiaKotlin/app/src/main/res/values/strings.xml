@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Teleafia Kotlin</string>
+    <string name="underlined_medicines"><u>Medicines</u></string>
+    <string name="underlined_prescription"><u>Prescriptions</u></string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="settings">Settings</string>
+    <string name="retail">Retail</string>
+    <string name="markets">Markets</string>
+    <string name="payments">Payments</string>
+    <string name="products">Products</string>
+    <string name="sales">Sales</string>
+    <string name="profile">profile</string>
+    <string name="accounts">accounts</string>
 </resources>

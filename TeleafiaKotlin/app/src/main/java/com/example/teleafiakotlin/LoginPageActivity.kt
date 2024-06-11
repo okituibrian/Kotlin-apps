@@ -27,6 +27,7 @@ class LoginActivity : AppCompatActivity() {
 
         loginButton?.setOnClickListener {
             Log.d("LoginActivity", "Login button pressed")
+            println("Login button pressed")
             val email = emailEditText?.text.toString().trim()
             val password = passwordEditText?.text.toString().trim()
 
@@ -38,32 +39,40 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun postToLogin(email: String, password: String) {
-        val apiService = RetrofitClient.apiService
-        val call = apiService.login(email, password)
+        try {
+            val apiService = RetrofitClient.apiService
+            val call = apiService.login(email, password)
 
-        call.enqueue(object : Callback<LoginResponse> {
-            override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
-                if (response.isSuccessful) {
-                    val responseBody = response.body()
-                    Log.d("LoginActivity", "Login successful: ${responseBody?.toString()}")
+            call.enqueue(object : Callback<LoginResponse> {
+                override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
+                    if (response.isSuccessful) {
+                        val responseBody = response.body()
+                        Log.d("LoginActivity", "Login successful: ${responseBody?.toString()}")
 
-                    if (responseBody != null) {
-                        Log.d("LoginActivity", "Received token: ${responseBody.token}")
-                        Log.d("LoginActivity", "User info: ${responseBody.user}")
+                        if (responseBody != null) {
+                            Log.d("LoginActivity", "Received token: ${responseBody.token}")
+                            Log.d("LoginActivity", "User info: ${responseBody.user}")
+                            println(responseBody.user)
 
-                        // Navigate to PharmacyActivity
-                        val intent = Intent(this@LoginActivity, PharmacyActivity::class.java)
-                        startActivity(intent)
-                        finish() // Optional: Call finish() if you want to close the LoginActivity
+                            // Navigate to PharmacyActivity
+                            val intent = Intent(this@LoginActivity, PharmacyActivity::class.java)
+                            startActivity(intent)
+                            finish() // Optional: Call finish() if you want to close the LoginActivity
+                        }
+                    } else {
+                        val errorBody = response.errorBody()?.string()
+                        Log.d("LoginActivity", "Login failed: $errorBody")
+                        println(errorBody)
                     }
-                } else {
-                    Log.d("LoginActivity", "Login failed: ${response.errorBody()?.string()}")
                 }
-            }
 
-            override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
-                Log.d("LoginActivity", "Login error: ${t.message}")
-            }
-        })
+                override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
+                    Log.e("LoginActivity", "Login error: ${t.message}", t)
+                    println(t.message)
+                }
+            })
+        } catch (e: Exception) {
+            Log.e("LoginActivity", "Error during login process", e)
+        }
     }
 }
